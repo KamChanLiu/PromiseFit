@@ -15,10 +15,10 @@
 
 div#confirmbutton {
 	width:80%;
-	right:auto;
-	left:auto;
+	margin: 0 auto;
+	text-align: center;
 }
 
 #confirmbutton div {
-	margin-left: 40%;
+	margin: 0 auto;
 }

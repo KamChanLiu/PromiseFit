@@ -8,9 +8,7 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
-<<<<<<< HEAD
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
-=======
 
 	<script>
 	// ---------- FB.login ----------
@@ -18,6 +16,7 @@
 	    FB.login(function(response) {
 	        if (response.authResponse) {
 	            // connected
+	            $.mobile.changePage($("#checkin"), { transition: "slideleft"} );
 	        } else {
 	            // cancelled
 	        }
@@ -28,7 +27,7 @@
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '212520088810176', // App ID
-      channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+      channelUrl : 'channel.html', // Channel File
       status     : true, // check login status
       cookie     : true, // enable cookies to allow the server to access the session
       xfbml      : true  // parse XFBML
@@ -59,7 +58,7 @@
      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
+     js.src = "http://connect.facebook.net/en_US/all.js";
      ref.parentNode.insertBefore(js, ref);
    }(document));
 	</script>
@@ -80,7 +79,6 @@
 			text-align: none;
 		}
 	</style>
->>>>>>> a31024aaf301c4279848751f830a1b15000d135c
 </head> 
 <body> 
 
@@ -92,17 +90,14 @@
 	</div><!-- /header -->
 
 	<div data-role="content">	
-<<<<<<< HEAD
-		<p>Page content goes here.</p>
-		<a href="#main">go to check in</a>		
-=======
+
 		<!-- Login Button -->
 		<form action="">
-			<a class="button facebook_login_button" href="#">
+			<a class="button facebook_login_button" href="#main">
 				Log in with Facebook
 			</a>
 		</form>		
->>>>>>> a31024aaf301c4279848751f830a1b15000d135c
+
 	</div><!-- /content -->
 
 	<div data-role="footer">
@@ -202,11 +197,17 @@
   			<option value="swimming">Badminton</option>
 		</select>		
 		<p class="center">FOR:</p>
-		<input type="text" name="time" id="timeInput" value="10" date-inline="true"/>
-		<select name="select-choice-0" id="select-choice-0">
+		<div  class="ui-grid-a">
+		<div class="ui-block-a center">
+		<input class="ui-block-a center" type="text" name="time" id="timeInput" value="10" />
+		</div>	
+		<div class="ui-block-b">
+		<select  name="select-choice-0" id="select-choice-0">
   			<option value="minutes">minutes</option>
   			<option value="hours">hours</option>
 		</select>
+		</div>
+		</div>
 		<p class="center"><a href="#reward" data-role="button" data-inline="true">SAVE</a></p>	
 	</div><!-- /content -->
 
@@ -277,7 +278,11 @@
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		
+		<ul data-role="listview">
+			<li>Running $x </li>
+			<li>Swimming $x</li>
+			<li>Gym $x</li>
+		</ul>
 		<p class="center"><a href="#progress" data-role="button" data-inline="true">Back</a></p>	
 	</div><!-- /content -->
 
