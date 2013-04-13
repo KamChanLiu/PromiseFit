@@ -1,18 +1,90 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-	<title>Page Title</title> 
+	<title>Welcome to Promise Fit</title> 
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+<<<<<<< HEAD
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
+=======
+
+	<script>
+	// ---------- FB.login ----------
+	function login() {
+	    FB.login(function(response) {
+	        if (response.authResponse) {
+	            // connected
+	        } else {
+	            // cancelled
+	        }
+	    });
+	}
+
+  // ---------- fbAsycInit ---------- // 
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '212520088810176', // App ID
+      channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional init code here
+    FB.getLoginStatus(function(response) {
+		  if (response.status === 'connected') {
+		  function testAPI() {
+			    console.log('Welcome!  Fetching your information.... ');
+			    FB.api('/me', function(response) {
+		        console.log('Good to see you, ' + response.name + '.');
+		    });
+			}
+	  } else if (response.status === 'not_authorized') {
+	    // not_authorized
+	  } else {
+	  	// not_logged in
+	  	// show the login window and tell authorization
+	    login();
+	  }
+		});
+
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+	</script>
+
+	<style>
+		.facebook_login_button {
+			font-family: Arial, Helvetica, sans-serif;
+			font-style: normal;
+			display: inline-block;
+			color: white !important;
+			font-weight: bold;
+			background: url('img/fb-login.png') 0 0 no-repeat !important;
+			width: 292px;
+			height: 40px;
+			text-align: center;
+			cursor: pointer;
+
+			text-align: none;
+		}
+	</style>
+>>>>>>> a31024aaf301c4279848751f830a1b15000d135c
 </head> 
 <body> 
 
-<!-- start of first page -->
+<!-- start of Login page -->
 <div data-role="page" id="login">
 
 	<div data-role="header">
@@ -20,8 +92,17 @@
 	</div><!-- /header -->
 
 	<div data-role="content">	
+<<<<<<< HEAD
 		<p>Page content goes here.</p>
 		<a href="#main">go to check in</a>		
+=======
+		<!-- Login Button -->
+		<form action="">
+			<a class="button facebook_login_button" href="#">
+				Log in with Facebook
+			</a>
+		</form>		
+>>>>>>> a31024aaf301c4279848751f830a1b15000d135c
 	</div><!-- /content -->
 
 	<div data-role="footer">
@@ -29,22 +110,7 @@
 	</div><!-- /footer -->
 </div><!-- /page -->
 
-<!-- Start of second page -->
-<div data-role="page" id="pledge">
 
-	<div data-role="header">
-		<h1>Pledge</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">	
-		<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>		
-		<p><a href="#foo">Back to foo</a></p>	
-	</div><!-- /content -->
-
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
 
 <div data-role="page" id="setcharity1">
 
