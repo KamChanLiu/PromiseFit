@@ -8,8 +8,5 @@
 
 	$sql = "INSERT INTO pledges (UserId, Amount, GoodCharityId, BadCharityId, Date, Complete) VALUES ($userid, $amount, $goodcharityid, $badcharityid, NOW(), 0)";
 
-	echo $sql;
-
-
-	mysqli_query($conn, $sql) or die(mysqli_error($conn));;
+	mysqli_query($conn, $sql) or die(mysqli_error($conn));
 ?>

@@ -14,7 +14,7 @@
 			$('#next').click(goToPage);
 
 			$('#accept').click(function(){
-				$.post('createpledge.php', { userid: "1", amount: $('#money').val(), goodcharityid : "1", badcharityid : "1" }, function(data){
+				$.post('createpledge.php', { userid: "1", amount: $('#money').val(), frequency: $('#frequency').val(), goodcharityid : "1", badcharityid : "1" }, function(data){
 							$('.result').html(data);
 						}
 					);
