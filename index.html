@@ -145,7 +145,7 @@
     function showStream(){
         FB.api('/me', function(response) {
             //console.log(response.id);
-            streamPublish(response.name, 'I like the articles of Thinkdiff.net', 'hrefTitle', 'http://thinkdiff.net', "Share thinkdiff.net");
+            streamPublish(response.name, 'description', 'hrefTitle', 'hrefLink', "userPrompt");
         });
     }
 
@@ -153,7 +153,7 @@
         showLoader(true);
         var share = {
             method: 'stream.share',
-            u: 'http://thinkdiff.net/'
+            u: 'http://skmisaac.me/promisefit/'
         };
 
         FB.ui(share, function(response) { 
@@ -167,11 +167,11 @@
         
         FB.api('/me/feed', 'post', 
             { 
-                message     : "I love thinkdiff.net for facebook app development tutorials",
-                link        : 'http://ithinkdiff.net',
-                picture     : 'http://thinkdiff.net/iphone/lucky7_ios.jpg',
-                name        : 'iOS Apps & Games',
-                description : 'Checkout iOS apps and games from iThinkdiff.net. I found some of them are just awesome!'
+                message     : "Share PromiseFit with your friends",
+                link        : 'http://skmisaac.me/promisefit',
+                picture     : '',
+                name        : 'Do fitness or pay',
+                description : 'Checkout apps from promisefit.co. I found it is awesome!'
                 
         }, 
         function(response) {
