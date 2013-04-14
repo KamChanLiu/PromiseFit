@@ -17,20 +17,44 @@
 		</div><!-- /header -->
 
 		<div data-role="content">	
-			<h2>IF I COMPLETE MY WORKOUT, I WANT MY MONEY TO GO TO: </h2>
-			<hr>
+			<div id="charity1">
+				<h2>IF I <span class="complete">COMPLETE</span> MY WORKOUT, I WANT MY MONEY TO GO TO: </h2>
+				<hr>
 
-			<!-- charity list -->
-			<div id="checkboxes1" data-role="fieldcontain">
-        <fieldset data-role="controlgroup" data-type="vertical">
-          
-        </fieldset>
-      </div>
+				<!-- charity list -->
+				<div data-role="fieldcontain">
+	        <fieldset data-role="controlgroup" data-type="vertical">
+	         <div data-role="fieldcontain">
+						<label for="charityList" class="select">Authroized Charity List</label>
+						<select id="charityList" name="charityList" data-native-menu="false">
+							<!-- js goes here -->
+						</select>
+					</div>	 
+	        </fieldset>
+				</div>
+			</div>	
 
+			<a href="#" data-role="button">Next</a>
+
+			<div id="charity2">
+				<h2>IF I <span class="fail">DON'T COMPELETE</span> MY WORKOUT, I WANT MY MONEY TO GO TO: </h2>
+				<hr>
+
+				<!-- charity list -->
+				<div data-role="fieldcontain">
+	        <fieldset data-role="controlgroup" data-type="vertical">
+	         <div data-role="fieldcontain">
+						<label for="charityList2" class="select">Authroized Charity List</label>
+						<select id="charityList2" name="charityList" data-native-menu="false">
+							<!-- js goes here -->
+						</select>
+					</div>	 
+	        </fieldset>
+				</div>
+			</div>	
 			
 			<a href="#" data-role="button">Next</a>
 
-			
 		</div><!-- /content -->
 
 	</div><!-- /page -->
