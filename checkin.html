@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-	<title>Welcome to Promise Fit</title> 
+	<title>Check In</title> 
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
@@ -11,94 +11,35 @@
 
 	<script type="text/javascript">
 		$(function(){
-			$('#next').click(goToPage);
-
-			$.get('charities.php', function(data) {
+			$.get('checkin.php', { userid : 1 }, function(data) {
 				for (var k in data) {
-					console.log(data[k].Name);
-					// Populate the select list
+					console.log(data[k].Date);
+					// Populate
+					$('#chkmsg').html('You have completed <b>' + data[k].Workouts + '</b> out of <b>' + data[k].Pledges + '</b> activities this week!' );
 				}
 			}, 'json');
-		});	
-
-		function goToPage() {
-			switch (pageNumber) {
-				case 1:					
-					$('#pledge1').slideToggle();
-					$('#pledge2').css('display', 'block');
-					break;
-				case 2:					
-					$('#pledge2').slideToggle();
-					$('#pledge3').css('display', 'block');
-					break;
-				case 3:	
-					$.post('createpledge.php', { userid: "1", amount: $('#money').val(), goodcharityid : "1", badcharityid : "1" }, function(data){
-							$('.result').html(data);
-						}
-					);
-
-				window.location = 'pledgesucess.html';
-				break;
-			}
-
-			pageNumber++;
-		}
-
-		var pageNumber = 1;
+		});
 	</script>
 
 </head> 
 <body> 
-	<div class="result"></div>
 	<!-- Start of Pledge page -->
-	<div data-role="page" id="pledge">
-
-		<div data-role="header">
-		</div><!-- /header -->
-
-		<div data-role="content">	
-			<h2>SET UP YOUR PLEDGE</h2>
+	<div data-role="content">	
+		<h2>CHECK IN</h2>
 			<hr>
-
-			<!-- excercise freq. -->
-
-			<div id="pledge1">
-				<div data-role="fieldcontain">
-					<label for="workout-selection" class="select">I will work out:</label>
-					<select id="workout-selection" name="workout-selection" data-native-menu="false">
-						<option value="1">1 Time</option>
-						<option value="2">2 Times</option>
-						<option value="3">3 Times</option>
-						<option value="4">4 Times</option>
-						<option value="5">5 Times</option>
-						<option value="6">6 Times</option>
-						<option value="7">7 Times</option>
-					</select>
-					<p>per week</p>
-				</div>
-
-				<div data-role="fieldcontain">
-					<label for="money" class="select">I'll willing to pay:</label>
-					<select id="money" name="money" data-native-menu="false">
-						<option value="5">$5 USD</option>	
-						<option value="10">$10 USD</option>
-						<option value="15">$15 USD</option>
-						<option value="20">$20 USD</option>
-					</select>
-					<p>per workout that I will actually do</p>
-				</div>				
-			</div>
-			<div style="display: none;" id="pledge2">
-				Charity 1:
-				<input type="text" id="charity1" />
-			</div>
-			<div style="display: none;" id="pledge3">
-				Charity 2:
-				<input type="text" id="charity2" />
-			</div>
-			<a id="next" href="#" data-role="button">Next</a>
-		</div><!-- /content -->
-
-	</div><!-- /page -->
+		<p><div id="chkmsg"></div></p>		
+		<p class="center"><a class="center" href="#report" data-role="button" data-inline="true">I worked out</a></p>	
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-id="do" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#main" class="ui-btn-active ui-state-persist">Check In</a></li>
+				<li><a href="#progress" class="ui-btn-active ui-state-persist">Progress</a></li>
+				<li><a href="#settings" class="ui-btn-active ui-state-persist">Settings</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+</div><!-- /page -->
 </body>
 </html>

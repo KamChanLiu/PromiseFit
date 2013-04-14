@@ -13,10 +13,18 @@
 		$(function(){
 			$('#next').click(goToPage);
 
+			$('#accept').click(function(){
+				$.post('createpledge.php', { userid: "1", amount: $('#money').val(), goodcharityid : "1", badcharityid : "1" }, function(data){
+							$('.result').html(data);
+						}
+					);
+				
+				window.location = 'checkin.html';
+			});
+
 			$.get('charities.php', function(data) {
 				for (var k in data) {
 					console.log(data[k].Name);
-					// Populate the select list
 				}
 			}, 'json');
 		});	
@@ -31,13 +39,17 @@
 					$('#pledge2').slideToggle();
 					$('#pledge3').css('display', 'block');
 					break;
-				case 3:	
-					$.post('createpledge.php', { userid: "1", amount: $('#money').val(), goodcharityid : "1", badcharityid : "1" }, function(data){
-							$('.result').html(data);
-						}
-					);
+				case 3:
+					$('#ptimes').html($('#workout-selection').val());
+					$('.pamount').html($('#money').val());
+					$('#pcharity').html($('#charity1').val());
+					$('#pcharity2').html($('#charity2').val());
+					$('#next').css('display', 'none');
+					$('#pledge3').slideToggle();
+					$('#pledge4').css('display', 'block');
+					break;
+				case 4:
 
-				window.location = 'pledgesucess.html';
 				break;
 			}
 
@@ -95,6 +107,22 @@
 			<div style="display: none;" id="pledge3">
 				Charity 2:
 				<input type="text" id="charity2" />
+			</div>
+			<div style="display: none;" id="pledge4">
+				You have pledged to workout <span id="ptimes"></span> times per week. <br/>
+				If you <b>meet</b> this goal, we will donate $<span class="pamount"></span> to <b><span id="pcharity"></span></b>.
+				<br />
+				<br />
+				If you <b>don't meet</b> your goal, we will donate $<span class="pamount"></span> to <b><span id="pcharity2"></span></b>.
+				<br />
+				<br />
+				Confirm your pledge?
+				<br />
+				<p class="center"><div id="confirmbutton" data-role="controlgroup" data-type="horizontal">
+		  			<a id="accept" data-role="button">YES</a>
+		  			<a data-role="button">NO</a>
+		  			</div>
+		  		</p>	
 			</div>
 			<a id="next" href="#" data-role="button">Next</a>
 		</div><!-- /content -->
