@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+	<script type="text/javascript" src="scripts/logic.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 
 	
@@ -356,7 +357,7 @@
 
 	<div data-role="content">	
 		<p class="center">I DID:</p>
-		<select name="select-choice-0" id="select-choice-0">
+		<select name="activity" id="activity" data-native-menu="false">
   			<option value="run">Running</option>
   			<option value="hike">Hiking</option>
   			<option value="gym">Gym</option>
@@ -366,16 +367,16 @@
 		<p class="center">FOR:</p>
 		<div  class="ui-grid-a">
 		<div class="ui-block-a center">
-		<input class="ui-block-a center" type="text" name="time" id="timeInput" value="10" />
+		<input class="ui-block-a center" type="text" name="timeInput" id="timeInput" value="10" />
 		</div>	
 		<div class="ui-block-b">
-		<select  name="select-choice-0" id="select-choice-0">
+		<select  name="time_unit" id="time_unit" data-native-menu="false">
   			<option value="minutes">minutes</option>
   			<option value="hours">hours</option>
 		</select>
 		</div>
 		</div>
-		<p class="center"><a href="#reward" data-role="button" data-inline="true">SAVE</a></p>	
+		<p class="center"><a id="save" href="#reward" data-role="button" data-inline="true">SAVE</a></p>	
 	</div><!-- /content -->
 
 	<div data-role="footer" data-id="do" data-position="fixed">
