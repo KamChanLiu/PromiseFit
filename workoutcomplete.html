@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Check In</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			$.get('pledges.php', { userid : 1 }, function(data) {
+				for (var k in data) {
+					console.log(data[k].Date);
+					// Populate
+					$('#chkmsg').html('Awesome! You donated $<b>' + data[k].Amount + '</b> to <b>' + data[k].GoodCharity + '</b>!' );
+
+					break;
+				}
+			}, 'json');
+		});
+	</script>
+
+</head> 
+<body> 
+	<!-- Start of Pledge page -->
+	<div data-role="header">
+		<h1>Rewards</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p class="center" id="donate">Awesome! You donated $x to  </p>
+		<p class="center" id="charity">y</p>
+		<p class="center" >You Win:</p>
+		<p><img id="spinner" src=""></p>
+		<p class="center"><a href="#main" data-role="button" data-inline="true">Sweet</a></p>	
+	</div><!-- /content -->
+
+<div data-role="footer" data-id="do" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#main" class="ui-btn-active ui-state-persist">Check In</a></li>
+				<li><a href="#progress" class="ui-btn-active ui-state-persist">Progress</a></li>
+				<li><a href="#settings" class="ui-btn-active ui-state-persist">Settings</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>
