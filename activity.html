@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Welcome to Promise Fit</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript">
+
+	</script>
+
+</head> 
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Record</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p class="center">I DID:</p>
+		<select name="activity" id="activity" data-native-menu="false">
+  			<option value="run">Running</option>
+  			<option value="hike">Hiking</option>
+  			<option value="gym">Gym</option>
+  			<option value="swimming">Swimming</option>
+  			<option value="swimming">Badminton</option>
+		</select>		
+		<p class="center">FOR:</p>
+		<div  class="ui-grid-a">
+		<div class="ui-block-a center">
+		<input class="ui-block-a center" type="text" name="timeInput" id="timeInput" value="10" />
+		</div>	
+		<div class="ui-block-b">
+		<select  name="time_unit" id="time_unit" data-native-menu="false">
+  			<option value="minutes">minutes</option>
+  			<option value="hours">hours</option>
+		</select>
+		</div>
+		</div>
+		<p class="center"><a id="save" href="reward.html" data-role="button" data-inline="true">SAVE</a></p>	
+	</div><!-- /content -->
+
+	<div data-role="footer" data-id="do" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="checkin.html" class="ui-btn-active ui-state-persist">Check In</a></li>
+				<li><a href="progress.html" >Progress</a></li>
+				<li><a href="settings.html" >Settings</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>
