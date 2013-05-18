@@ -1,0 +1,53 @@
+#landing-headline {
+	padding: 25px 0;
+}
+
+#headline-container {
+	float: left;
+}
+
+.headline {	
+	font-size: 72px;
+	color: #FFF;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.35);
+}
+
+.headline-text {
+	margin-top: 25px;
+	font-size: 22px;
+	color: #FFF;
+}
+
+.headline-button {	
+	float: left;
+	margin-top: 25px;
+	padding: 7px 12px;
+	border-radius: 5px;	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	text-align: center;	
+	background-color: #4173c9;	
+	color: #FFF;
+	font-weight: bold;
+	font-size: 22px;
+	text-shadow: 0 -2px 0 rgba(0,0,0,.08);
+}
+
+.headline-button:hover {
+	background-color: #396bbcg;
+}
+
+.headline-image {
+	float: left;
+	width: 300px;
+	height: 300px;
+	margin-left: 200px;
+	margin-top: 20px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(../images/headline.jpg) no-repeat;
+	background-position: 
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
