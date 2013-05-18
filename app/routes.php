@@ -11,16 +11,16 @@
 |
 */
 
+Route::controller('account', 'AccountController');
+
 Route::get('/', function()
 {
-	return View::make('home');
+	return View::make('pages.home');
 });
 
-Route::get('login', function(){
-	return View::make('pages.login');
-});
+Route::get('login', 'AccountController@login');
 
-Route::post('login', function(){
+/*Route::post('login', function(){
 	$userdata = array(
         'username' => Input::get('username'),
         'password' => Input::get('password')
@@ -38,4 +38,4 @@ Route::post('login', function(){
 Route::get('logout', function(){
 	Auth::logout();
 	return Redirect::to('/');
-});
+});*/
