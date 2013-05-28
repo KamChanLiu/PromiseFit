@@ -1,0 +1,10 @@
+.panel {
+	margin: 20px;
+	float: left;
+	width: 25%;
+	border: 1px solid #ebebeb;
+	border-radius: 5px;	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-color: #FFFFFF;
+}

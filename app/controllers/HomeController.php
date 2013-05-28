@@ -20,4 +20,11 @@ class HomeController extends BaseController {
 		return View::make('pages.home');
 	}
 
+	public function dashboard()
+	{
+		// $pledges = Pledge::find(Auth::user()->id);
+		$pledges = Pledge::find(1);
+
+		return View::make('pages.dashboard', compact('pledges'));
+	}
 }

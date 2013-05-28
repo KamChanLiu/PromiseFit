@@ -1,0 +1,77 @@
+* {
+	font-family: arial;	
+}
+
+a, a:hover, a:visited {
+	text-decoration: none;
+}
+
+body {
+	margin: 0;
+}
+
+/* ----- HEADER ----- */
+#header {
+	height: 60px;
+	padding: 10px 0;	
+}
+
+#header-logo {
+	height: 50px;
+}
+
+#home-link {
+	border: none;
+}
+
+.login-button { 	
+	display: block;
+	border: 1px solid;
+	float: left;
+}
+
+/* ----- NAVIGATION ----- */
+#navigation {	
+	height: 31px;
+	border-bottom: 1px solid #d95d50;
+}
+
+#navigation ul {
+	list-style-type: none;
+	overflow: hidden;
+	padding: 0px;
+	margin: 0px;
+}
+
+#navigation li {
+	float: left;
+	height: auto;
+}
+
+#navigation li a {
+	float: left;
+	padding: 5px;
+	text-decoration: none;
+	border: 1px solid #e1e1e1;
+	color: black;
+}
+
+/* ----- MAIN CONTENT ----- */
+#content { 	
+	min-height: 450px; /* for modern browsers */
+	height: auto !important; /* for modern browsers */
+	height: 450px; /* for IE5.x and IE6 */
+	background-color: #d95d50;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;	
+}
+
+/* ----- FOOTER ----- */
+#footer { 	
+	height: 100px;
+	margin-top: 10px;
+	font-size: 12px;
+}
