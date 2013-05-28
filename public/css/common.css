@@ -20,10 +20,13 @@ body {
 	height: 50px;
 }
 
+<<<<<<< HEAD
 #home-link {
 	border: none;
 }
 
+=======
+>>>>>>> ca0c20ab20afed1d4b68f6afb6fd388b9b73b5d7
 .login-button { 	
 	display: block;
 	border: 1px solid;
