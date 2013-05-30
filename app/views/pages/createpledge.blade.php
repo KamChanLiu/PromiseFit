@@ -6,7 +6,7 @@
 @stop
 
 @section('scripts')
-    <script src="scripts/shared/nlform.js"></script>
+    <script src="../scripts/shared/nlform.js"></script>
     <script>
         var nlform = new NLForm( document.getElementById( 'nl-form' ) );
     </script>

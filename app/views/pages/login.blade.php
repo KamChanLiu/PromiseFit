@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 @extends('layouts.public')
 
 @section('content')
     {{ Form::open(array('url' => 'account/login')) }}
-=======
-@extends('layouts.master')
-
-@section('content')
-    {{ Form::open(array('url' => 'login')) }}
->>>>>>> ca0c20ab20afed1d4b68f6afb6fd388b9b73b5d7
         <!-- check for login errors flash var -->
         @if (Session::has('login_errors'))
             <span class="error">Username or password incorrect.</span>

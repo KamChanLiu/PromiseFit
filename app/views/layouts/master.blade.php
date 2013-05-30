@@ -9,7 +9,6 @@
     <body>
         <div id="header">
         	<div class="container">        	
-<<<<<<< HEAD
 	        	<a href="../home" id="home-link">
                     {{ HTML::image('images/logo.png', 'promisefit', array('id' => 'header-logo')) }}	        	
 	            </a>
@@ -24,17 +23,6 @@
 	        	<ul>
 	        		<li><a href="home">Home</a></li>
                     <li><a href="pledges">Pledges</a></li>
-=======
-	        	{{ HTML::image('images/logo.png', 'promisefit', array('id' => 'header-logo')) }}	        	
-        	</div>
-            <a href="login" class="login-button">Log In</a>
-        </div>
-        
-        <div id="navigation">
-        	<div class="container">
-	        	<ul>
-	        		<li><a href="/">Home</a></li>
->>>>>>> ca0c20ab20afed1d4b68f6afb6fd388b9b73b5d7
 	        		<li><a href="about">About</a></li>        		
 	        	</ul>
 	        </div>
@@ -52,8 +40,5 @@
         	</div>
         </div>
     </body>
-<<<<<<< HEAD
     @yield('scripts')
-=======
->>>>>>> ca0c20ab20afed1d4b68f6afb6fd388b9b73b5d7
 </html>
