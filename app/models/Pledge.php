@@ -11,4 +11,9 @@ class Pledge extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'pledges';
+
+	public function getProgress()
+	{
+		
+	}
 }

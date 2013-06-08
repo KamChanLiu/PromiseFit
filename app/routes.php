@@ -18,6 +18,7 @@ Route::get('account/logout', 'AccountController@getLogout');
 Route::get('account/register', 'AccountController@getRegister');
 Route::post('account/register', 'AccountController@postRegister');
 
+Route::get('pledge/view/{id}', 'PledgeController@view');
 Route::get('pledge/create', 'PledgeController@getCreate');
 Route::post('pledge/create', 'PledgeController@postCreate');
 

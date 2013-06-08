@@ -24,7 +24,10 @@ class HomeController extends BaseController {
 	{
 		// $pledges = Pledge::find(Auth::user()->id);
 		$pledges = Pledge::find(1);
+		
+		return View::make('pages.dashboard')->with('pledges', Pledge::where('user_id', 1)->take(5)->get());
+		// return View::make('pages.dashboard', pledges);
 
-		return View::make('pages.dashboard', compact('pledges'));
+		// due date = interval - ((today - start) % today) + today
 	}
 }

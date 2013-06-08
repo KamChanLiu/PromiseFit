@@ -4,6 +4,11 @@ class PledgeController extends BaseController {
 	
 	public $restful = true;
 
+	public function view($id)
+	{
+		return View::make('pages.view')->with('pledge', Pledge::find($id));
+	}
+
 	public function getView()
 	{
 	}
