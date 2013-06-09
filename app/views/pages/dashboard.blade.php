@@ -15,14 +15,23 @@
                     <br />
                     @foreach ($pledges as $pledge)
                         <div class="dashboard-pledge">
-                            <h3>{{ $pledge['activity'] }}<h3>
-                            X / {{ $pledge['frequency'] }} <br />
-                            <b>{{ $pledge['interval'] - ((date("Y-m-d") - $pledge['start_date']) % $pledge['interval']) }}</b>
-                             days to go!
-                            <a href="pledge/view/{{ $pledge['id'] }}">View</a>
+                            <a href="pledge/view/{{ $pledge['id'] }}">
+                                <div class="pledge-detail">
+                                    <span class="pledge-title">{{ $pledge['activity'] }}</span>
+                                    <br />
+                                    <span class="pledge-description">{{ $pledge['description'] }}</span>
+                                    <br/>
+                                    <b>{{ $pledge['interval'] - ((date("Y-m-d") - $pledge['start_date']) % $pledge['interval']) }}</b>
+                                    days to go!
+                                </div>
+                                <div class="counter">
+                                    <span class="counter-value">{{ $pledge->getProgress() }}</span>
+                                    <span class="counter-divider">/</span>
+                                    <span class="counter-total">{{ $pledge['frequency'] }}</span>
+                                </div>
+                            </a>                            
                         </div>
                     @endforeach
-                    <br />
                     <a href="pledge/create">Make</a> another!
                 @else
                     You do not have any active pledges. <br />

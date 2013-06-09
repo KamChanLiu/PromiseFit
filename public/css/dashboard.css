@@ -9,3 +9,65 @@
 	background-color: #FFFFFF;
 	padding: 10px;
 }
+
+.dashboard-pledge {	
+	padding: 5px;
+	border-top: 1px solid #ebebeb;
+	border-bottom: 1px solid #ebebeb;	
+	margin: 7px 0;
+	overflow: hidden;
+}
+
+.dashboard-pledge:hover {
+	background-color: #9bb1d5;
+}
+
+.dashboard-pledge a {
+	text-decoration: none;
+}
+
+.pledge-detail {
+	float: left;
+	width: 70%;
+}
+
+.pledge-title {
+	float: left;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.pledge-description {
+	font-size: 12px;
+}
+
+.counter {
+	position: relative;
+	border: 2px solid #9cbbad;
+	background-color: #e1ede7;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	font-weight: bold;
+	float: right;
+}
+
+.counter-value {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+}
+
+.counter-divider {
+	font-size: 42px;
+	font-weight: normal;
+	position: absolute;
+	top: 2px;
+	left: 18px;
+}
+
+.counter-total {
+	position: absolute;
+	bottom: 8px;
+	right: 8px;
+}

@@ -6,6 +6,10 @@ a, a:hover, a:visited {
 	text-decoration: none;
 }
 
+a:visited {
+	color: black;
+}
+
 body {
 	margin: 0;
 }

@@ -14,6 +14,11 @@ class Pledge extends Eloquent {
 
 	public function getProgress()
 	{
-		
+		return count(Action::where('pledge_id', $this->id)->get());
+	}
+
+	public function getActions()
+	{
+		return Action::where('pledge_id', $this->id)->OrderBy('created_at')->get();
 	}
 }
