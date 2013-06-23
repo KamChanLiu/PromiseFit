@@ -44,6 +44,17 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+Route::filter('auth.pledge', function($route, $request){
+	$id = $route->getParameter('id');
+
+	if (Auth::user()->id == Pledge::where('id', $id)->take(1)->get()['user_id']) {
+		return true;
+	}
+	else {
+		return false;
+	}
+});
+
 /*
 |--------------------------------------------------------------------------
 | Guest Filter
