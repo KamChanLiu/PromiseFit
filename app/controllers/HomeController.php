@@ -23,11 +23,10 @@ class HomeController extends BaseController {
 	public function dashboard()
 	{
 		// $pledges = Pledge::find(Auth::user()->id);
-		$pledges = Pledge::find(1);
-		
-		return View::make('pages.dashboard')->with('pledges', Pledge::where('user_id', 1)->take(5)->get());
-		// return View::make('pages.dashboard', pledges);
+		$pledges = Pledge::where('user_id', 1)->orderBy('created_at', 'desc')->take(5)->get();
 
-		// due date = interval - ((today - start) % today) + today
+		$actions = Action::join('pledges as p', 'actions.pledge_id', '=', 'p.id')->where('p.user_id', '=', 1)->get();
+
+		return View::make("pages.dashboard", compact('pledges', 'actions'));		
 	}
 }

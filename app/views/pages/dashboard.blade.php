@@ -42,7 +42,19 @@
     			<h3>Pledge Targets</h3>
     		</div>
     		<div class="panel">
-    			<h3>Pledge History</h3>
+    			<h3>Activity History</h3>
+                @if (count($actions) > 0)
+                    @foreach($actions as $action)
+                        <div class="dashboard-activity">
+                            {{ $action['comment'] }}
+                            <br/> 
+                            {{ $action['created_at']->format('d-m-Y'); }}
+                        </div>
+                    @endforeach
+                @else
+                    You have no recent activies...
+                    <a href="#">Check In!</a>
+                @endif
     		</div>
 	    </div>	    
 	</div>
