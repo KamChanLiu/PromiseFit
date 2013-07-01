@@ -22,10 +22,9 @@ class HomeController extends BaseController {
 
 	public function dashboard()
 	{
-		// $pledges = Pledge::find(Auth::user()->id);
-		$pledges = Pledge::where('user_id', 1)->orderBy('created_at', 'desc')->take(5)->get();
-
-		$actions = Action::join('pledges as p', 'actions.pledge_id', '=', 'p.id')->where('p.user_id', '=', 1)->get();
+		$user_id = Auth::user()->id;
+		$pledges = Pledge::where('user_id', $user_id)->orderBy('created_at', 'desc')->take(5)->get();
+		$actions = Action::join('pledges as p', 'actions.pledge_id', '=', 'p.id')->where('p.user_id', '=', $user_id)->get();
 
 		return View::make("pages.dashboard", compact('pledges', 'actions'));		
 	}
